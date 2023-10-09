@@ -1,7 +1,7 @@
 # 🎧 Live music player 
 
 ## 🔎 View 
-![Image09](../img/09.PNG)
+![Image09](../img/04.PNG)
 
 ## 🛠️ How to use
 * Clone or download this repository to your local machine.
