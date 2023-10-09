@@ -1,0 +1,22 @@
+* {
+    background-color: rgb(208, 224, 184);
+}
+.calculator {
+    margin: 10rem;
+    padding: 1rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+}
+
+#display {
+    background-color: white;;
+}
+
+/* .keyboard {
+
+} */
+
+button {
+    background-color: rgb(145, 224, 70);
+}

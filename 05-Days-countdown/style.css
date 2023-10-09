@@ -1,0 +1,97 @@
+/* VARS COLOR */
+:root {
+    --main: rgb(0, 81, 255);
+    --second: rgb(245, 174, 82);
+    --red: rgb(255, 60, 0);
+    --bgColor: rgb(108, 202, 240);
+}
+
+/* GENERAL */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* BODY */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bgColor);
+}
+
+.form {
+    background-color: var(--second);
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    background-color:var(--red);
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.form input {
+margin: 5px 0;
+padding: 5px;
+display: block;
+width: 100%;
+box-sizing: border-box;
+}
+
+input[type="submit"] {
+    border: none;
+    background-color: var(--main);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+#eventsContainer {
+    background-color: var(--second);
+    border-radius: 5px;
+    padding: 10px;
+    width: 500px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.event {
+    border : solid 1px var(--main);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.event .days {
+    text-align: center;
+    width: 100px;
+}
+
+.event .days .days-number {
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+}
+
+.event .event-name {
+    padding: 10px;
+    width: 200px;
+}
+
+.event .event-date {
+    padding: 10px;
+    width:100px;
+}
+
+.event .actions {
+    padding: 10px;
+}
