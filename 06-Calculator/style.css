@@ -2,21 +2,36 @@
     background-color: rgb(208, 224, 184);
 }
 .calculator {
-    margin: 10rem;
+    margin: 0 auto;
+    margin-top: 10rem;
     padding: 1rem;
     text-align: center;
     justify-content: center;
     align-items: center; 
+    border: 2px solid black;
+    border-radius: 1rem;
+    width: 20rem;
+}
+
+.screen input {
+    text-align: right;
 }
 
 #display {
     background-color: white;;
+    width: 10rem;
+    height: 2rem;
+    font-size: 1rem;
 }
 
-/* .keyboard {
-
-} */
+.keyboard {
+    margin-top: 1rem;
+}
 
 button {
     background-color: rgb(145, 224, 70);
+    width: 3rem;
+    height: 3rem;
+    margin: 0.2rem;
+    font-size: 1rem;
 }
