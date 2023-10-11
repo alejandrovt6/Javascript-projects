@@ -2,6 +2,8 @@ var num1 = "";
 var accumulated = 0;
 var isSum = false;
 var isSub = false;
+var isMult = false;
+var firstOperation = true;
 
 function addToDisplay(num2) {
     document.getElementById("display").value = num1 + num2;
@@ -25,20 +27,31 @@ function sum() {
     num1 = "";
     isSum = true;
     isSub = false;
+
+    firstOperation = false;
 }
 
 function sub() {
-    if (isSum) {
-        accumulated = accumulated + parseInt(num1);
-        document.getElementById("display").value = accumulated;
+    if (!firstOperation) {
+        if (isSum) {
+            accumulated = accumulated + parseInt(num1);
+            document.getElementById("display").value = accumulated;
+        } else {
+            accumulated = accumulated - parseInt(num1);
+            document.getElementById("display").value = accumulated;
+        }
     } else {
-        accumulated = accumulated - parseInt(num1);
-        document.getElementById("display").value = accumulated;
+        accumulated = parseInt(num1);
+        firstOperation = false;
     }
 
     num1 = "";
     isSum = false;
     isSub = true;
+}
+
+function multiply() {
+
 }
 
 function result() {
