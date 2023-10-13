@@ -50,10 +50,6 @@ function sub() {
     isSub = true;
 }
 
-function multiply() {
-
-}
-
 function result() {
     if (isSum) {
         document.getElementById("display").value = accumulated+parseInt(num1);
