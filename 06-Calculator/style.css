@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "DS-DIGI";
+    src: url("../fonts/DS-DIGIB.TTF");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
 :root {
     --primary: #424242;
     --secundary: aliceblue;
@@ -58,7 +66,7 @@ body {
     margin-bottom: 20px;
     border-radius: 10px;
     font-size: 65px;
-    /* font-family: ; */
+    font-family:"DS-DIGI";
 }
 
 #calculator > .ops > [data-op-1] {
