@@ -1,63 +1,43 @@
-var num1 = "";
-var accumulated = 0;
-var isSum = false;
-var isSub = false;
-var isMult = false;
-var firstOperation = true;
-
-function addToDisplay(num2) {
-    document.getElementById("display").value = num1 + num2;
-    num1 = document.getElementById("display").value;
-}
-
-function deleteDisplay(value) {
-    document.getElementById("display");
-    display.value = "";
-}
-
-function sum() {
-    if (isSub) {
-        accumulated = accumulated - parseInt(num1);
-        document.getElementById("display").value = accumulated;  
-    } else {
-        accumulated = accumulated + parseInt(num1);
-        document.getElementById("display").value = accumulated;
+class Calculator {
+    constructor(op1Element, op2Element) {
+        this.op1Element = op1Element;
+        this.op2Element = op2Element;
+        this.clear();
     }
 
-    num1 = "";
-    isSum = true;
-    isSub = false;
-
-    firstOperation = false;
-}
-
-function sub() {
-    if (!firstOperation) {
-        if (isSum) {
-            accumulated = accumulated + parseInt(num1);
-            document.getElementById("display").value = accumulated;
-        } else {
-            accumulated = accumulated - parseInt(num1);
-            document.getElementById("display").value = accumulated;
-        }
-    } else {
-        accumulated = parseInt(num1);
-        firstOperation = false;
+    clear() {
+        this.op1 = 0;
+        this.op2 = 0;
+        this.operator = 0;
+        this.updateUI();
     }
 
-    num1 = "";
-    isSum = false;
-    isSub = true;
-}
-
-function result() {
-    if (isSum) {
-        document.getElementById("display").value = accumulated+parseInt(num1);
-    } else if (isSub) {
-        document.getElementById("display").value = accumulated-parseInt(num1);
+    updateUI() {
+        this.op1Element.innerHTML = this.op1 + this.operator;
+        this.op2Element.innerHTML = this.op2;
     }
 
-    accumulated = parseInt(document.getElementById("display").value);
-    num1 = 0;
-    
+    appendNumber(number) {
+        if(number === "." && this.op2.includes(".")) return;
+        this.op2 = this.op2 === 0 ? number : this.op2.toString() + number; 
+        this.updateUI();
+    }
 }
+
+const op1Element = document.querySelector("[data-op-1]");
+const op2Element = document.querySelector("[data-op-2]");
+
+const clearBtn = document.querySelector("[data-clear]");
+const numberBtns = document.querySelectorAll("[data-number]");
+
+const calculator = new Calculator(op1Element, op2Element);
+
+clearBtn.addEventListener("click", () => {
+    calculator.clear();
+})
+
+numberBtns.forEach(button => {
+    button.addEventListener("click", () => {
+        calculator.appendNumber(button.innerHTML);
+    })
+})

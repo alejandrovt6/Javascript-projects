@@ -1,37 +1,98 @@
+:root {
+    --primary: #424242;
+    --secundary: aliceblue;
+    --ternary: grey;
+    --screen: rgb(200, 189, 218);
+    --bg1: #e8f3c9;
+    --bg2: rgb(255, 115, 0);
+}
+
 * {
-    background-color: rgb(208, 224, 184);
-}
-.calculator {
-    margin: 0 auto;
-    margin-top: 10rem;
-    padding: 1rem;
-    text-align: center;
-    justify-content: center;
-    align-items: center; 
-    border: 2px solid black;
-    border-radius: 1rem;
-    width: 20rem;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-.screen input {
+body {
+    background-color: var(--bg1);
+}
+
+#calculator {
+    background-color: var(--primary);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 30px 0 30px;
+    border-radius: 10px;
+    /* box-shadow: 15px 15px 0px var(--primary); */
+}
+
+/* #calculator::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background-color: var(--primary);
+    transform: rotate(45deg);
+    margin-left: -29px;
+    margin-top: -2px;
+    z-index: -1;
+} */
+
+/* #calculator::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background-color: var(--primary);
+    transform: rotate(45deg);
+    margin-left: 458;
+    margin-top: -22px;
+    z-index: -1;
+} */
+
+#calculator > .ops {
+    width: 100%;
+    padding: 20px;
     text-align: right;
+    background-color: var(--screen);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 65px;
+    /* font-family: ; */
 }
 
-#display {
-    background-color: white;;
-    width: 10rem;
-    height: 2rem;
-    font-size: 1rem;
+#calculator > .ops > [data-op-1] {
+    font-size: 40px;
 }
 
-.keyboard {
-    margin-top: 1rem;
+#calculator > #btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 
-button {
-    background-color: rgb(145, 224, 70);
-    width: 3rem;
-    height: 3rem;
-    margin: 0.2rem;
-    font-size: 1rem;
+#calculator > #btn-container button {
+    padding: 10px;
+    background-color: var(--secundary);
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: var(--ternary);
+}
+
+#calculator > #btn-container button:nth-child(2) { 
+    grid-column: span 2;
+}
+
+#calculator > #btn-container button:last-child {
+    grid-column: span 2;
+    background-color: var(--bg2);
+}
+
+#copy {
+    font-size: 12px;
+    padding: 10px;
+    color: white;
+    text-align: center;
 }
