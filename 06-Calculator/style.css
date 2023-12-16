@@ -34,30 +34,6 @@ body {
     /* box-shadow: 15px 15px 0px var(--primary); */
 }
 
-/* #calculator::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 8px;
-    background-color: var(--primary);
-    transform: rotate(45deg);
-    margin-left: -29px;
-    margin-top: -2px;
-    z-index: -1;
-} */
-
-/* #calculator::before {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 8px;
-    background-color: var(--primary);
-    transform: rotate(45deg);
-    margin-left: 458;
-    margin-top: -22px;
-    z-index: -1;
-} */
-
 #calculator > .ops {
     width: 100%;
     padding: 20px;

@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('./img/login.jpg') no-repeat;
+    /* background-color: aquamarine; */
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    /* background:blue; */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color:white;
+    user-select: none;
+}
+
+/* NAV */
+.nav a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav .login-btn {
+    width:130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color:white;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.nav .login-btn:hover {
+    background-color: brown;
+}
+
+/* CONTAINER */
+.container {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid grey;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.container.active-form {
+    transform: scale(1);
+}
+
+.container.active {
+    height: 520px;
+}
+
+.container .login-box {
+    transition: transform .18s ease;;
+    transform: translateX(0);
+}
+
+.container.active .login-box {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.container .register-box {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.container.active .register-box {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.container .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: brown;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor:pointer;
+    z-index: 1;
+}
+
+.login-box h2 {
+    font-size: 2em;
+    color: rgb(10, 10, 10);
+    text-align: center;
+}
+
+.input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input label {
+    position: absolute;
+    top:50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.input input:focus~label,
+.input input:valid~label {
+    top: -5px;
+}
+
+.input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
+}
+
+.input .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.1em;
+    color: black;
+    line-height: 55px;
+}
+
+.remember-psw {
+    font-size: .9em;
+    color:black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-psw label input {
+    accent-color: brown;
+    margin-right: 5px;
+}
+
+.remember-psw a {
+    color: rgb(12, 12, 12);
+    text-decoration: none;
+}
+
+.remember-psw a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 45px;
+    background: brown;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: black;
+}
+
+.register {
+    font-size: .9em;
+    color:black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px
+}
+
+.register p a::hover {
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    body {
+      background-size: contain;
+      background-position: top;
+    }
+  
+    header {
+      padding: 10px;
+    }
+  
+    .logo {
+      font-size: 1.5em;
+    }
+  
+    .nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav a {
+      margin: 10px 0;
+    }
+  
+    .container {
+      width: 90%;
+    }
+  
+    .container.active {
+      height: 600px;
+    }
+  
+    .login-box h2 {
+      font-size: 1.8em;
+    }
+  
+    .input {
+      margin: 20px 0;
+    }
+  
+    .input label {
+      font-size: 0.9em;
+    }
+  
+    .remember-psw {
+      font-size: 0.8em;
+    }
+  
+    .submit-btn {
+      height: 40px;
+      font-size: 0.9em;
+    }
+  
+    .register {
+      font-size: 0.8em;
+      margin: 20px 0;
+    }
+  
+    .register p a {
+      font-size: 0.9em;
+    }
+  }
+
+/* RESPONSIVE FOR MOBILE PHONES */
+@media screen and (max-width: 480px) {
+    /* Styles for screens up to 480px wide */
+    body {
+      background-size: contain;
+      background-position: top;
+    }
+  
+    header {
+      padding: 10px;
+    }
+  
+    .logo {
+      font-size: 1.3em;
+    }
+  
+    .nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav a {
+      margin: 10px 0;
+      font-size: 0.9em;
+    }
+  
+    .container {
+      width: 90%;
+    }
+  
+    .container.active {
+      height: 600px;
+    }
+  
+    .login-box h2 {
+      font-size: 1.5em;
+    }
+  
+    .input {
+      margin: 15px 0;
+    }
+  
+    .input label {
+      font-size: 0.8em;
+    }
+  
+    .remember-psw {
+      font-size: 0.7em;
+    }
+  
+    .submit-btn {
+      height: 40px;
+      font-size: 0.9em;
+    }
+  
+    .register {
+      font-size: 0.7em;
+      margin: 20px 0;
+    }
+  
+    .register p a {
+      font-size: 0.8em;
+    }
+  }
